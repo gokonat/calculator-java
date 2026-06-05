@@ -6,47 +6,58 @@ package com.efe.calculator;
 /**
  *  @author efe-inceoglu
  */
+import java.util.ArrayList;
+
 public class Calculator {
 	
+	private ArrayList<String> history = new ArrayList<>();
+	
 	public int sum(int num1, int num2) {
+		history.add(num1 + " + " + num2 + "=" + (num1 + num2));
 		return num1 + num2;
 	}
+	
 	public double sum(double num1, double num2) {
 		return num1 + num2;
 	}
+	
 	public int subtraction(int num1,int num2) {
 		return num1 - num2;
 	}
+	
 	public double subtraction(double num1, double num2) {
 		return num1 - num2;
 	}
+	
 	public int multiplication(int num1,int num2) {
 		return num1 * num2;
 	}
+	
 	public double multiplication(double num1 , double num2) {
 		return num1 * num2;
 	}
+	
 	public int divide(int num1,int num2) {
 		return num1 / num2;
 	}
+	
 	public double divide(double num1, double num2) {
 		return num1 / num2;
 	}
+	
 	public int absVal(int num) {
-		if (num >= 0) {
-			return num;
-		}
-		else {
-			return num * -1;
-		}
+		return Math.abs(num);
 	}
+	
 	public double absVal(double num) {
-		if (num >= 0.0) {
-			return num;
+		return Math.abs(num);
 		}
-		else {
-			return num * -1;
+	
+	public void showHistory() {
+		System.out.println("Calculation History");
+		for (String item : history) {
+		System.out.println(item);
 		}
-		
 	}
+	
 }
