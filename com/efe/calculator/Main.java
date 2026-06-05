@@ -17,30 +17,39 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner scnr = new Scanner(System.in);
 		
-		Calculator Calculate = new Calculator();
+		Calculator calculate = new Calculator();
 		
 		System.out.println("Type the numbers please (2 numbers at a time).");
 		int num1 = scnr.nextInt();
 		int num2 = scnr.nextInt();
 		
-		System.out.println("Type the calculation type you want , first digit will be taken for absVal.(sum, subtraction, multiplication, divide and absval).");
+		System.out.println("Type the calculation type you want , first digit will be taken for absVal.(sum, subtraction, multiplication, divide, absval and history).");
 		String type = scnr.next();
 		
 		if (type.equals("sum")) {
-			System.out.println("Result of summation is: "+Calculate.sum(num1 , num2));
+			System.out.println("Result of summation is: " + calculate.sum(num1, num2));
 		}
+		
+		else if (type.equals("history")) {
+			calculate.showHistory();
+		}
+		
 		else if (type.equals("subtraction")) {
-			System.out.println("Result of subtraction is: "+Calculate.subtraction(num1, num2));
+			System.out.println("Result of subtraction is: " + calculate.subtraction(num1, num2));
 		}
+		
 		else if (type.equals("multiplication")) {
-			System.out.println("Result of multiplication is: "+Calculate.multiplication(num1, num2));
+			System.out.println("Result of multiplication is: " + calculate.multiplication(num1, num2));
 		}
+		
 		else if  (type.equals("divide")) {
-			System.out.println("Result of divide is: "+Calculate.divide(num1, num2));
+			System.out.println("Result of divide is: " + calculate.divide(num1, num2));
 		}
+		
 		else if (type.equals("absval")) {
-			System.out.println("Result of absolute value of num is: "+Calculate.absVal(num1));
+			System.out.println("Result of absolute value of num is: " + calculate.absVal(num1));
 		}
+		
 		else {
 			System.out.println("Unknown type");
 		}
