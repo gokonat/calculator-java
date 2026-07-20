@@ -27,6 +27,14 @@ public class Main {
 		System.out.println("Choose an operation (sum, subtraction, multiplication, divide, absval, history and exit):");
 		String type = scnr.next();
 		
+		if (type.equals("exit")) {
+			
+			System.out.println("Goodbye!");
+			running = false;
+		}
+		
+		else {
+		
 		switch (type) {
 		
 		case "sum": {
@@ -84,16 +92,12 @@ public class Main {
 			break;
 		}
 		
-		case "exit":
-			running = false;
-			break;
-		
 		default:
 			
 			System.out.println("Unknown type.");
 		}
 		
-		
+	  }
 	}
 		
 		
